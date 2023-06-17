@@ -9,6 +9,12 @@
         <h1>
             <a href="{% url 'home' %}">SI HAY EQUIPO</a>
         </h1>
+        <a href="{% url 'create_post' %}">Nuevo post</a>
+    </header>
+    {% if user.is_authenticated %}
+        <p>Epale {{ user.username }}</p>
+        <p><a href="{% url 'logout' }">Log out</a></p>
+    {% endif %}
         {% block content %}
 
         {% endblock content %}
