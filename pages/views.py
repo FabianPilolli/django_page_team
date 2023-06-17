@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView
 from django.urls import reverse_lazy 
 from .models import Post
 
@@ -12,3 +12,8 @@ class PostCreateView(CreateView):
     template_name = "create_post.html"
     fields = ('title', 'description')
     success_url = reverse_lazy('home')
+
+class PostListView(ListView):
+    model = Post
+    template_name = 'home.html'
+
