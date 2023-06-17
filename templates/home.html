@@ -5,7 +5,7 @@
 <h1>Lista de articulos</h1>
 
 {% for post in post_list %}
-<a href=""><p>{{post.title}}</p></a>
+<a href="{% url 'post_detail' post.pk %}"><p>{{post.title}}</p></a>
 
 {% endfor %}
 
